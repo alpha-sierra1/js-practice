@@ -95,3 +95,33 @@ const add = function (...numbers) {
 add(2, 3);
 add(5, 3, 7, 2);
 add(8, 2, 5, 3, 2, 1, 2);
+
+// Short Circuiting with || OR Operator
+
+console.log(3 || 'Aditi');
+console.log('' || 'Aditi');
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || 0 || 'Hello' || 23 || null);
+
+restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+// Short Circuiting with && AND Operator (it works in opposite way of OR operator)
+
+console.log(0 && 'Aditi');
+console.log(7 && 'Aditi');
+
+console.log('Hello' && 23 && null && 'jonas');
+
+// Practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushroom', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
