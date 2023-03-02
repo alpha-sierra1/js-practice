@@ -105,12 +105,16 @@ console.log(undefined || null);
 
 console.log(undefined || 0 || 'Hello' || 23 || null);
 
-restaurant.numGuests = 23;
+restaurant.numGuests = 0;
 const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
 console.log(guests1);
 
 const guests2 = restaurant.numGuests || 10;
 console.log(guests2);
+
+// Nullish: null and undefined ( NOT 0 or '')
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
 
 // Short Circuiting with && AND Operator (it works in opposite way of OR operator)
 
@@ -125,3 +129,48 @@ if (restaurant.orderPizza) {
 }
 
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+// Logical Assignment Operators
+
+const rest1 = {
+  name: 'Capri',
+  numGuests: 20,
+};
+
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
+
+rest1.numGuests = rest1.numGuests || 10;
+rest2.numGuests = rest2.numGuests || 10;
+console.log(rest1);
+console.log(rest2);
+
+// OR Assignment Operator
+rest1.numGuests ||= 10;
+rest2.numGuests ||= 10;
+
+console.log(rest1);
+console.log(rest2);
+
+// Nullish assignment operator (null or undefined)
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+console.log(rest1);
+console.log(rest2);
+
+rest1.owner = rest1.owner && '<ANONYMOUS>';
+rest2.owner = rest2.owner && '<ANONYMOUS>';
+
+console.log(rest1);
+console.log(rest2);
+// && Operator short circuits when first value is falsy
+
+// AND assignment operator
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
+
+console.log(rest1);
+console.log(rest2);
