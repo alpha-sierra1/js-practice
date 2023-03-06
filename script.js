@@ -174,3 +174,69 @@ rest2.owner &&= '<ANONYMOUS>';
 
 console.log(rest1);
 console.log(rest2);
+
+// SETS
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(orderSet);
+
+console.log(new Set('Aditi'));
+
+console.log(orderSet.size); // to check size/length
+
+console.log(orderSet.has('Pizza')); // to check if an item is present in set or not
+console.log(orderSet.has('Bread'));
+
+orderSet.add('Garlic Bread'); // To add another elememt to existing set
+orderSet.add('Garlic Bread');
+
+orderSet.delete('Risotto'); // To delete an item from set
+console.log(orderSet);
+
+// looping is possible only for iterables
+for (const order of orderSet) console.log(order);
+
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+// MAPS
+const rest = new Map();
+rest.set('name', 'Classico Italiano'); // to add use set
+rest.set(1, 'Firenze, Italy');
+rest.set(2, 'Lisbon, Portugal');
+console.log(rest.set(2, 'Lisbon, Portugal'));
+
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open :D')
+  .set(false, 'We are closed :(');
+
+// use 'get' to get data from the map
+rest.get('name');
+rest.get(true);
+rest.get(1);
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+console.log(rest.has('categories')); // to check if map has a certain key
+rest.delete(2); // to delete a key from map
+console.log(rest);
+
+console.log(rest.size); // to check the size
+// rest.clear(); //  to clean a map entirely
+console.log(rest);
