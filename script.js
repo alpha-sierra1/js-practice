@@ -309,3 +309,8 @@ const checkMiddleSeat = function (seat) {
 checkMiddleSeat('11B');
 checkMiddleSeat('23C');
 checkMiddleSeat('3E');
+
+// Lowercase & Uppercase
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
